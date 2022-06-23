@@ -61,7 +61,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     if(empty($username_err) && empty($confirm_password_err))
     {
         // Prepare an update statement
-        $sql = "UPDATE users SET password = ? WHERE username = ?";
+        $sql = "UPDATE user SET password = ? WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql))
         {

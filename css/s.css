@@ -1531,3 +1531,9 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	from { -webkit-transform: rotate(0deg); transform: rotate(0deg);}
 	to { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
 }
+
+
+/* General Purpose Category */
+.box{
+	display:flexbox;
+}

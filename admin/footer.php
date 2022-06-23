@@ -53,8 +53,10 @@
 		<!-- /Footer -->
 
 		<!-- preloader -->
-		
-		<!-- /preloader -->
+	
+    <div id="preloader-admin">
+	</div>
+   
 
 
 		<!-- jQuery Plugins -->

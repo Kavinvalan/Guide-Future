@@ -22,16 +22,7 @@
 
     </head>
 	<body>
-    Preloader start
-    ********************-->
-    <div id="preloader">
-		<div class="lds-ripple">
-			<div></div>
-			<div></div>
-		</div>
-    </div>
-    <!--*******************
-        Preloader end
+    
 		<!--Header-->
         <header id="header" class="transparent-nav" style="position: fixed;background-color: #f8be14; top: 0;">
 			<div class="container">
@@ -62,19 +53,17 @@
                         <li class="dropdown">
                             <a class="dropbtn" href="javascript:void(0)">Services <span>&#11167;</span></a>
                             <div class="dropdown-content">
-								<a href="login.php">Career Prediction</a>
-                                <a href="courses.php">Courses</a>
-                                <a href="blog.php">Knowledge Network</a>
+								<a href="login.php">Career Prediction Module</a>
+                                <a href="add-courses.php">Update-Courses</a>
+                                <a href="blog.php">Build-Knowledge Network</a>
 								
                             </div>
                         </li>
-						<li><a href="index.php#about">About Us</a></li>
-						<li><a href="contact.php">Contact Us</a></li>
 						<li>
-							<a href="login.php">Login</a>
+							<a href="login.php">Login-Out</a>
 						</li>
 						<li>
-							<a href="register.php">Register</a>
+							<a href="register.php">Register-Employee</a>
 						</li>
 						
                         
