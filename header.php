@@ -53,7 +53,7 @@
                             <a class="dropbtn" href="javascript:void(0)">Services <span>&#11167;</span></a>
                             <div class="dropdown-content">
 								<a href="login.php">Career Prediction</a>
-                                <a href="courses.php">Courses</a>
+                                <a href="courses.php">Career-Liberary</a>
                                 <a href="blog.php">Knowledge Network</a>
 								
                             </div>
@@ -80,7 +80,7 @@
                             <a class="dropbtn" href="javascript:void(0)">Services <span>&#11167;</span></i></a>
                             <div class="dropdown-content">
 								<a href="login.php">Career Prediction</a>
-                                <a href="courses.php">Courses</a>
+                                <a href="courses.php">Career-Liberary</a>
                                 <a href="blog.php">Knowledge Network</a>
 								
                             </div>

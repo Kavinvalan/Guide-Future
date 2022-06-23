@@ -104,8 +104,14 @@ session_start();
 								<a class="course-title" href="engineering-technology.php" target="_blank" style="font-size:18px; text-align: center">Engineering Technology</a>
 							</div>
 						</div>
+
+						<br>
+</br>
+						<br>
+</br>
 						
-		
+		<div><p></p></div>
+		<div><p></p></div>
 		
 		
 		<?php include 'footer.php'?>
