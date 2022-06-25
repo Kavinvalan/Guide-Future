@@ -3,13 +3,8 @@
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$username = $password = $confirm_password = $first_name = $email = "";
-$username_err = $password_err = $confirm_password_err = $first_name_err = $email_err = "";
-$phone = 0;
-$phone_err = "";
-$province = $district = "";
-$provice_err = $disrict_err = "";
-
+$username = $password = $confirm_password = "";
+$username_err = $password_err = $confirm_password_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -70,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO user (username, password,First-Name) VALUES (?, ?)";
+        $sql = "INSERT INTO user (username, password) VALUES (?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -158,35 +153,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
-                <label><b>First-Name</b></label>
-                <input type="text" name="first_name" class="form-control <?php echo (!empty($first_name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $first_name; ?>">
-                <span class="invalid-feedback"><?php echo $first_name_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label><b>Email-Address</Email-Address></b></label>
-                <input type="email" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
-                <span class="invalid-feedback"><?php echo $email_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label><b>Telephone-Number</b></label>
-                <input type="tel" name="phone" class="form-control <?php echo (!empty($phone_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $phone; ?>">
-                <span class="invalid-feedback"><?php echo $phone_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label><b>Province</b></label>
-                <input type="text" name="Province" class="form-control <?php echo (!empty($province_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $province; ?>">
-                <span class="invalid-feedback"><?php echo $province_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label><b>District</b></label>
-                <input type="text" name="district" class="form-control <?php echo (!empty($district_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $district; ?>">
-                <span class="invalid-feedback"><?php echo $district_err; ?></span>
-            </div>        
-            <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-secondary ml-2" value="Reset">
             </div>
-            
             <p style="font-size: 16px;">Already have an account? <a href="login.php" style="color: blue;">Login here</a>.</p>
         </form>
     </div>    

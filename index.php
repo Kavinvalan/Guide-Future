@@ -106,7 +106,7 @@ session_start();
 						<div class="feature">
 						<i class="feature-icon fa "><span>&#x1F50E;&#xFE0E;</span></i>
 							<div class="feature-content">
-								<a href="courses.php" >
+								<a href="computer-courses.php" >
 								<h4>Online Courses</h4>
 								</a>
 								<p>Links to relevant Courses.</p>
@@ -183,7 +183,10 @@ session_start();
 					<div class="col-md-6">
 						<div class="section-header">
 							<h2 style="font-size: 35px;">About Guide-Future</h2>
-							<p class="lead" style="font-size: 18px; font-style: italic; margin-top: 50px;">Our, platform Guide-Future is created based on the motive of helping students who are especially completing their schooling. We have made this platform to help them pursue their career paths according to nowadays world of work and based on their personalities.<div>
+							<p class="lead" style="font-size: 18px; font-style: italic; margin-top: 50px;">Our, platform Guide-Future is created based on the motive of helping students who are especially completing their schooling. We have made this platform to help them pursue their career paths according to nowadays world of work and based on their personalities.<br>Our conceptual career assistance framework is based on cognitive behavioural
+          theory, that majorly associates to find the accurate career match for you. It
+          is custom made with 4 major fields like Orientation, Interest, Personality,
+          and Aptitude.<div>
 
 					</div>
 

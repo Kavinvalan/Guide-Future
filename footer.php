@@ -6,11 +6,16 @@
 
 				<!-- row -->
 				<div class="row">
+					<br>
+					<br>
+					<div class="blank-space">
+
+					</div>
 
 					<!-- footer logo -->
 					<div class="col-md-6">
 						<div class="footer-logo">
-							<a class="logo" style="font-size: 30px;" href="main.php">Guide-Future</a>
+							<a class="logo" style="font-size: 30px;" href="index.php">Guide-Future</a>
 						</div>
 					</div>
 					<!-- footer logo -->

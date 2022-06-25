@@ -2,28 +2,39 @@
 // Include config file
 require_once "config.php";
  
-// Define variables and initialize with empty values
-$stream = $cousre_cat = $course = $img = $description ="" ;
-$stream_err = $cousre_cat_err = $course_err = $img_err = $description_err ="" ;
+?>
+<?php
+//Defining variables
+$user = "" ;
+$user_err = "";
+$password = $confirm_password="";
+$password_err = $confirm_password_err = "";
+$email ="";
+$email ="";
+$first_name ="";
+$first_name_err ="";
+$phone = 0;
+$phone_err = "";
+$province = $district = "";
+$provice_err = $disrict_err = "";
+$user ="";
 
-
- 
-// Processing form data when form is submitted
+ // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Validate username
-    if(empty(trim($_POST["stream"]))){
-        $stream_err = "Please select a stream.";
+    if(empty(trim($_POST["username"]))){
+        $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM career-category WHERE course = ?";
+        $sql = "SELECT id FROM user WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_course);
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
             
             // Set parameters
-            $param_course = trim($_POST["course"]);
+            $param_username = trim($_POST["username"]);
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -31,9 +42,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 mysqli_stmt_store_result($stmt);
                 
                 if(mysqli_stmt_num_rows($stmt) == 1){
-                    $course_err = "This course is already entered.";
+                    $username_err = "This username is already taken.";
                 } else{
-                    $course = trim($_POST["course"]);
+                    $username = trim($_POST["username"]);
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -66,27 +77,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before inserting in database
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
-        // Prepare an insert statement
-        $sql = "INSERT INTO user (username, password,First-Name) VALUES (?, ?)";
-         
-        if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
-            
-            // Set parameters
-            $param_username = $username;
-            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                // Redirect to login page
-                header("location: login.php");
-            } else{
-                echo "Oops! Something went wrong. Please try again later.";
-            }
-
-            // Close statement
-            mysqli_stmt_close($stmt);
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+        //$link = mysqli_connect('localhost', 'my_user', 'my_password', 'world');
+        $conn = new mysqli('localhost', 'root', '', 'guide-future');
+        
+    $sql = "INSERT INTO user (username, password) VALUES ( $user, $password)";
+  
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+        header("location: login.php");
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }
     
@@ -94,6 +95,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
+
  
 <!DOCTYPE html>
 <html lang="en">
@@ -141,8 +143,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label><b>Username</b></label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                <input type="text" name="username" class="form-control <?php echo (!empty($user_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $user; ?>">
+                <span class="invalid-feedback"><?php echo $user_err; ?></span>
             </div>    
             <div class="form-group">
                 <label><b>Password</b></label>
