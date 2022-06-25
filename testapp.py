@@ -19,14 +19,17 @@ def result():
       res = result.to_dict(flat=True)
       print("res:",res)
       arr1 = res.values()
-      arr = ([value for value in arr1])
+      arr = ([int(value) for value in arr1])
 
       data = np.array(arr)
 
       data = data.reshape(1,-1)
       print(data)
       loaded_model = pickle.load(open("careerlast.pkl", 'rb'))
-      predictions = loaded_model.predict(data)
+      try:
+        predictions = loaded_model.predict(data)
+      except:
+        breakpoint()
      # return render_template('testafter.html',a=predictions)
       
       print(predictions)
@@ -54,7 +57,23 @@ def result():
               print('final_res[index]:',final_res[index])
               index += 1
       #print(final_res)
-      jobs_dict = {0:""}
+      jobs_dict = {0:'AI ML Specialist',
+                   1:'API Integration Specialist',
+                   2:'Application Support Engineer',
+                   3:'Business Analyst',
+                   4:'Customer Service Executive',
+                   5:'Cyber Security Specialist',
+                   6:'Data Scientist',
+                   7:'Database Administrator',
+                   8:'Graphics Designer',
+                   9:'Hardware Engineer',
+                   10:'Helpdesk Engineer',
+                   11:'Information Security Specialist',
+                   12:'Networking Engineer',
+                   13:'Project Manager',
+                   14:'Software Developer',
+                   15:'Software Tester',
+                   16:'Technical Writer'}
                 
       #print(jobs_dict[predictions[0]])
       job = {}
@@ -62,6 +81,7 @@ def result():
       index = 1
      
         
+
       data1=predictions[0]
       print(data1)
       return render_template("testafter.html",final_res=final_res,job_dict=jobs_dict,job0=data1)
