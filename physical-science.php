@@ -67,7 +67,7 @@ require_once "config.php"; ?>
 									<img src="img/Engineering/computer-science.png" alt="">
 									<i class="course-link-icon fa fa-link"></i>
 								</a>
-								<a class="course-title" href="computer-courses.php" target="_blank" style="font-size:18px; text-align: center">Computer Science & IT</a>
+								<a class="course-title" href="blog.php"  style="font-size:18px; text-align: center">ComputerScience & IT</a>
 							</div>
 						</div>
 		            	<div class="col-md-3 col-sm-6 col-xs-6">

@@ -54,7 +54,7 @@
                             <div class="dropdown-content">
 								<a href="login.php">Career Prediction</a>
                                 <a href="courses.php">Career-Liberary</a>
-                                <a href="blog.php">Knowledge Network</a>
+                                <a href="computer-courses.php">Knowledge Network</a>
 								
                             </div>
                         </li>

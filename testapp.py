@@ -25,7 +25,7 @@ def result():
 
       data = data.reshape(1,-1)
       print(data)
-      loaded_model = pickle.load(open("careerlast.pkl", 'rb'))
+      loaded_model = pickle.load(open('careerlast.pkl', 'rb'))
       try:
         predictions = loaded_model.predict(data)
       except:
